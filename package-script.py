@@ -42,14 +42,14 @@ def main():
     changelog = answers['changelog']
 
     replace("manifest.json", r'"version_number": ".+",', '"version_number": "{}",'.format(version))
-    replace("CommandPotential/CommandPotential.cs", r'public const string PluginVersion = ".+";', 'public const string PluginVersion = "{}";'.format(version))
+    replace("E8Raincoat/E8Raincoat.cs", r'public const string PluginVersion = ".+";', 'public const string PluginVersion = "{}";'.format(version))
     if changelog is not None and changelog != '':
         replace("README.md", "## Changelog", "## Changelog\n\n**{0}**\n\n{1}".format(version, changelog))
     shutil.copy("manifest.json", "package/manifest.json")
     shutil.copy("README.md", "package/README.md")
-    shutil.copy("CommandPotential/bin/Debug/netstandard2.0/CommandPotential.dll", "package/CommandPotential.dll")
+    shutil.copy("E8Raincoat/bin/Debug/netstandard2.0/E8Raincoat.dll", "package/E8Raincoat.dll")
 
-    compressed = ['README.md', 'CommandPotential.dll', 'icon.png', 'manifest.json']
+    compressed = ['README.md', 'E8Raincoat.dll', 'icon.png', 'manifest.json']
 
     zipf = zipfile.ZipFile('package/build-{0}.zip'.format(version), 'w', zipfile.ZIP_DEFLATED)
     for f in compressed:

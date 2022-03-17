@@ -2,7 +2,7 @@
 	"name": "E8Raincoat",
 	"version_number": "1.0.0",
 	"website_url": "https://github.com/DarkKronicle/E8Raincoat",
-	"description": "Makes it so Ben's Raincoat doesn't nullify Eclipse 8",
+	"description": "Makes it so that Ben's Raincoat does not remove Eclipse 8 debuff",
 	"dependencies": [
 		"bbepis-BepInExPack-5.4.9",
 		"RiskofThunder-HookGenPatcher-1.2.1",
